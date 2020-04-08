@@ -71,7 +71,7 @@ def chat(userText):
 @app.route("/")
 def home():    
     return render_template("home.html") 
-@app.route("/get")
+@app.route("/get",methods=["GET","POST"])
 def get_bot_response():    
     userText = request.args.get('msg')    
     return str(chat(userText)) 
