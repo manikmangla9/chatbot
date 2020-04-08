@@ -1,8 +1,7 @@
 #import files
 from flask import Flask, render_template, request
 import nltk
-
-#nltk.download('punkt') 
+nltk.download('punkt') 
 import numpy as np
 import tflearn
 import tensorflow as tf
@@ -13,7 +12,7 @@ import pickle
 from nltk.stem.lancaster import LancasterStemmer
 stemmer=LancasterStemmer()
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__)
 
 with open("data.pickle","rb") as f:
     words,labels,training,output=pickle.load(f)
